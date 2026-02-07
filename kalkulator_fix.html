@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kalkulator Serius</title>
+
+<style>
+body {
+    background: linear-gradient(135deg,#ffb3d9,#b388ff);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: Arial;
+}
+
+.calc {
+    background:#111;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+#display {
+    width:240px;
+    height:60px;
+    font-size:26px;
+    text-align:right;
+    padding:10px;
+    border:none;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: repeat(4, 60px);
+    gap:10px;
+}
+
+button {
+    height:55px;
+    font-size:20px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+button:active {
+    transform:scale(0.92);
+}
+
+.num { background:#eee; }
+.op { background:#ff8a65; color:white; }
+.eq { background:#66bb6a; color:white; }
+.clr { background:#ef5350; color:white; }
+</style>
+</head>
+
+<body>
+
+<div class="calc">
+    <input id="display" readonly>
+
+    <div class="grid">
+        <button class="clr" onclick="clearD()">C</button>
+        <button class="op" onclick="press('/')">÷</button>
+        <button class="op" onclick="press('*')">×</button>
+        <button class="op" onclick="press('-')">−</button>
+
+        <button class="num" onclick="press('7')">7</button>
+        <button class="num" onclick="press('8')">8</button>
+        <button class="num" onclick="press('9')">9</button>
+        <button class="op" onclick="press('+')">+</button>
+
+        <button class="num" onclick="press('4')">4</button>
+        <button class="num" onclick="press('5')">5</button>
+        <button class="num" onclick="press('6')">6</button>
+        <button class="eq" onclick="hitung()">=</button>
+
+        <button class="num" onclick="press('1')">1</button>
+        <button class="num" onclick="press('2')">2</button>
+        <button class="num" onclick="press('3')">3</button>
+        <button class="num" onclick="press('0')">0</button>
+    </div>
+</div>
+
+<script>
+function press(v){
+    display.value += v;
+}
+
+function clearD(){
+    display.value = "";
+}
+
+function hitung(){
+    display.value = "dida galak";
+}
+</script>
+
+</body>
+</html>
